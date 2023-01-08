@@ -8,7 +8,6 @@
             speedAnimation: 600,        // Default speed of the animation
             scrollTopButtonOffset: 500, // when scrollTop Button will show
             oakvilleLocation: [43.560886, -79.576003],
-            torontoLocation: [43.712072, -79.399308],
             mapZoom: 11 // map zoom
         },
         $win = $(window),
@@ -468,8 +467,6 @@
             var instance = this,
                 oakvilleLatlng = new google.maps.LatLng(instance.options.oakvilleLocation[0],
                                                         instance.options.oakvilleLocation[1]),
-                torontoLatlng = new google.maps.LatLng(instance.options.torontoLocation[0],
-                                                       instance.options.torontoLocation[1]),
                 cmapOptions = {
                     zoom: instance.options.mapZoom,
                     scrollwheel: false,
@@ -486,15 +483,9 @@
                 map: cmap
             });
 
-            new google.maps.Marker({
-                position: torontoLatlng,
-                map: cmap
-            });
-
             // Fit bounds around both locations
             var bounds = new google.maps.LatLngBounds();
             bounds.extend(oakvilleLatlng);
-            bounds.extend(torontoLatlng);
 
             cmap.fitBounds(bounds);
 
@@ -504,11 +495,6 @@
                 // For popup map
                 new google.maps.Marker({
                     position: oakvilleLatlng,
-                    map: cmapPopup
-                });
-
-                new google.maps.Marker({
-                    position: torontoLatlng,
                     map: cmapPopup
                 });
 
