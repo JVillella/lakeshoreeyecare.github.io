@@ -8,7 +8,7 @@
             speedAnimation: 600,        // Default speed of the animation
             scrollTopButtonOffset: 500, // when scrollTop Button will show
             oakvilleLocation: [43.560886, -79.576003],
-            mapZoom: 15 // map zoom
+            mapZoom: 17 // map zoom
         },
         $win = $(window),
         $html = $('html'),
