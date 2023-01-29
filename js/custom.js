@@ -7,8 +7,8 @@
             sliderInterval: 6000,		// Interval
             speedAnimation: 600,        // Default speed of the animation
             scrollTopButtonOffset: 500, // when scrollTop Button will show
-            oakvilleLocation: [43.560886, -79.576003],
-            mapZoom: 17 // map zoom
+            oakvilleLocation: [43.44745458657963, -79.66599576317833],
+            mapZoom: 18 // map zoom
         },
         $win = $(window),
         $html = $('html'),
@@ -470,10 +470,10 @@
                 cmapOptions = {
                     zoom: instance.options.mapZoom,
                     scrollwheel: false,
-                    navigationControl: false,
+                    navigationControl: true,
                     mapTypeControl: false,
-                    scaleControl: false,
-                    zoomControl: false,
+                    scaleControl: true,
+                    zoomControl: true,
                     fullscreenControl: false,
                     streetViewControl: false,
                     draggable: true,
@@ -482,7 +482,11 @@
             // cmapPopup = (instance.mapPopup.length === 1) ? new google.maps.Map(document.getElementById('map-popup'), cmapOptions) : '';
 
             new google.maps.Marker({
-                position: oakvilleLatlng,
+                place: {
+                    placeId: "ChIJb5Xf5JFcK4gRk3dxYZwcGPk",
+                    location: oakvilleLatlng,
+                },
+                // position: oakvilleLatlng,
                 map: cmap
             });
 
